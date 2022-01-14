@@ -5,5 +5,8 @@ public interface Properties {
      *
      */
     ApplicationProperties appConfig = ApplicationProperties.getInstance();
-
+    /***
+     *
+     */
+    PropertiesConfig configuration = PropertiesConfig.getInstance();
 }

@@ -1,4 +1,4 @@
-package fr.zenity.appium.drivers;
+package fr.zenity.appium.drivers.utils;
 
 
 import fr.zenity.appium.config.Properties;
@@ -12,7 +12,7 @@ import java.net.URL;
 
 public class LocalDriver implements DriversImpl {
 
-    private AppiumDriver<MobileElement> driver;
+    protected AppiumDriver<MobileElement> driver;
 
     public LocalDriver(){
         DesiredCapabilities cap = this.getAndroidCapabilities();
@@ -37,7 +37,7 @@ public class LocalDriver implements DriversImpl {
         return driver;
     }
 
-    private URL getWebDriveRemoteUrl(){
+    protected URL getWebDriveRemoteUrl(){
         try{
            StringBuffer sb = new StringBuffer();
            return new URL(

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public enum Device {
 
-    SAMSUMG("testor"),
+    SAMSUMG("test"),
     IPHONE(null),
     CUSTOM(null);
 

@@ -3,13 +3,9 @@ package fr.zenity.appium.drivers;
 import fr.zenity.appium.Enum.Device;
 import fr.zenity.appium.Enum.Plateform;
 import fr.zenity.appium.drivers.utils.DriversImpl;
-import fr.zenity.appium.drivers.utils.LocalDriver;
 import org.apache.log4j.Logger;
 
 import java.util.Locale;
-
-import static fr.zenity.appium.Enum.Plateform.ANDROID;
-import static fr.zenity.appium.Enum.Plateform.IOS;
 
 public final class MobileDriverManager {
     /***
@@ -40,6 +36,8 @@ public final class MobileDriverManager {
         }
 
     }
+
+    public static DriversImpl driver(){ return INSTANCE.getDriver(); }
 
     public static MobileDriverManager getInstance(){ return INSTANCE; }
 

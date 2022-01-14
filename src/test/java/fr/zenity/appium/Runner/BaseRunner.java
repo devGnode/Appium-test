@@ -5,12 +5,14 @@ import fr.zenity.appium.drivers.MobileDriverManager;
 import fr.zenity.appium.drivers.utils.LocalDriver;
 import fr.zenity.appium.server.AppiumServer;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 
 public class BaseRunner extends AbstractTestNGCucumberTests {
 
-    @BeforeTest
+    @BeforeSuite
     public void setUp(){
         if(!AppiumServer.isRunning()) AppiumServer.start();
         MobileDriverManager
@@ -22,8 +24,9 @@ public class BaseRunner extends AbstractTestNGCucumberTests {
     }
 
 
-    @AfterTest
+    @AfterSuite
     public void tearDown(){
+        MobileDriverManager.driver().quit();
         if(AppiumServer.isRunning()) AppiumServer.Stop();
     }
 

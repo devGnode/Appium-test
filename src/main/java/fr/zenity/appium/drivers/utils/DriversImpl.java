@@ -1,4 +1,4 @@
-package fr.zenity.appium.drivers;
+package fr.zenity.appium.drivers.utils;
 
 import fr.zenity.appium.config.Properties;
 import io.appium.java_client.AppiumDriver;

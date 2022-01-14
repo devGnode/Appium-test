@@ -4,14 +4,13 @@ import fr.zenity.appium.drivers.MobileDriverManager;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
-import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class View {
 
 
-    private AppiumDriver<MobileElement> driver;
+    protected AppiumDriver<MobileElement> driver;
 
     protected WebDriverWait wait;
     protected WebDriverWait shortWait;
@@ -24,12 +23,12 @@ public abstract class View {
                 .getDriver()
                 .getDriver();
 
-        PageFactory.initElements(new AppiumFieldDecorator(this.driver), this);
+        PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 
         wait        = new WebDriverWait(driver, 5);
         shortWait   = new WebDriverWait(driver, 10);
         middleWait  = new WebDriverWait(driver, 20);
-        longWait    = new WebDriverWait(driver, 40);
+        longWait    = new WebDriverWait(driver, 600);
 
     }
 

@@ -11,14 +11,13 @@ public class HomeSteps implements En {
         Given("^I go to login view$", () -> {
            assert homePage.applicationOk();
            homePage.clickOnContinue();
-            homePage.clickOnRegistered();
         });
 
         Given("^I click on registered button$", () -> {
-            homePage.clickOnRegistered();
             try {
-                Thread.sleep(15000);
+                Thread.sleep(5000);
             }catch (Exception e){}
+            homePage.clickOnRegistered();
         });
     }
 }
